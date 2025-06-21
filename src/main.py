@@ -32,7 +32,7 @@ def create_app(config_name=None):
     db_port = os.getenv('DB_PORT', '3306')
     db_name = os.getenv("DB_NAME", "mydb") # It's good practice to use a specific DB name
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///cenart.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_ECHO'] = False # Set to True for debugging SQL queries
 
